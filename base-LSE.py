@@ -30,3 +30,34 @@ class ListaSE:
 		else:
 			nuevo_nodo.siguiente = self.cabeza
 			self.cabeza = nuevo_nodo
+			
+    #Contador 
+		contador=0
+		def contador(self):
+			if self.cabeza==None:
+				return 0
+			else:
+				nodoesp=self.cabeza
+				while nodoesp!=None:
+					contador+=1
+					nodoesp=nodoesp.siguiente
+					return contador
+
+    #Buscar un elemento
+		def buscador(self,data):
+			cent=input(int("Ingrese el elemento a buscar: "))
+			if self.cabeza==None:
+				return False
+			else:
+				nodoesp=self.cabeza
+				while nodoesp!=cent:
+					nodoesp=nodoesp.siguiente
+					if nodoesp==None:
+						return False
+					
+          
+lista = ListaSE()
+lista.agregarInicio(10)
+lista.agregarInicio(20)
+cont=lista.contador()
+print(cont)
