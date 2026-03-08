@@ -40,6 +40,19 @@ class ListaSE:
                 nodoesp=nodoesp.siguiente
             nuevo_nodo.siguiente = nodoesp.siguiente
             nodoesp.siguiente = nuevo_nodo
+
+    #Agregar despues de un elemento X
+    def agregarDes(self,data,x):
+        nuevo_nodo=Nodo(data)
+        if self.cabeza is None:
+            nuevo_nodo.siguiente = self.cabeza
+            self.cabeza = nuevo_nodo
+        else:
+            nodoesp=self.cabeza 
+            while nodoesp.siguiente is not None and nodoesp.data!=x:
+                nodoesp=nodoesp.siguiente 
+            nuevo_nodo.siguiente=nodoesp.siguiente 
+            nodoesp.siguiente=nuevo_nodo           
         
 	#Agregar al final
     def agregarFin(self,data):
